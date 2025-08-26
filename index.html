@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amelia and Her Crew</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    /* Navigation Bar */
+    nav {
+      background-color: #04316c;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav li {
+      margin-left: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero section */
+    .hero {
+      position: relative;
+      height: 75vh;
+      background-image: url('hero_image.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .hero-content {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      z-index: 1;
+      max-width: 700px;
+    }
+    .hero-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    .booking-form {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .booking-form input, .booking-form select {
+      width: 160px;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .booking-form button {
+      background-color: #04316c;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .booking-form button:hover {
+      background-color: #072d5e;
+    }
+
+    /* Sections */
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #04316c;
+      margin-bottom: 20px;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .feature-card {
+      flex: 1 1 300px;
+      background: #f7f7f7;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: 20px;
+    }
+    .feature-card h3 {
+      margin-top: 0;
+      color: #04316c;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .gallery img {
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .contact {
+      background: #04316c;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .contact h2 {
+      color: #fff;
+    }
+    .contact p, .contact a {
+      color: #fff;
+      font-size: 1rem;
+    }
+    .contact a {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #021f3e;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation bar -->
+  <nav>
+    <h1>Amelia and Her Crew</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#parents">Parents</a></li>
+      <li><a href="#litter">Upcoming Puppies</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Book Your Puppy’s Flight Home</h2>
+      <p>Reserve one of Amelia’s future pups and prepare for take‑off to a lifelong adventure together.</p>
+      <form class="booking-form">
+        <input type="text" placeholder="Preferred City" disabled>
+        <input type="date" placeholder="Pick-Up Date" disabled>
+        <button type="button">Check Availability</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Features / About section -->
+  <section class="section" id="parents">
+    <h2>Meet the Parents & Upcoming Puppies</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Amelia Under Kodas Eye</h3>
+        <p>Our fearless dam brings courage and grace to our line. She is affectionate, intelligent, and has a strong pedigree of health and temperament.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Cotton (Enchanted Oasis Rio Blanco of Yellow Rose MH)</h3>
+        <p>Our distinguished sire Cotton brings hunting titles and a gentle demeanor to the mix. His calm disposition and strong working drive make him the perfect partner for Amelia.</p>
+      </div>
+      <div class="feature-card" id="litter">
+        <h3>Upcoming Litter</h3>
+        <p>Amelia is expecting 6–7 puppies around <strong>September 25, 2025</strong>. Puppies will be ready to join their new families around <strong>November 20, 2025</strong>. Keeping pups with their mother and siblings until at least eight weeks supports healthy socialization.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Adoption & Health section -->
+  <section class="section">
+    <h2>Adoption Process & Health Guarantee</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Adoption Process</h3>
+        <p>To reserve a puppy, we require a deposit. Once you express interest, we’ll provide further details on deposit amounts and payment schedules. All puppies come with up-to-date vaccinations, de‑worming, and a microchip.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Health Guarantee</h3>
+        <p>Our comprehensive Puppy Purchase Agreement & Health Guarantee protects both buyer and puppy. It covers deposit terms, health guarantees, spay/neuter requirements, and return policies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery section -->
+  <section class="section" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="amelia_photo1.png" alt="Amelia wearing an aviator hat">
+      <!-- Add more images by duplicating the line above and changing the src attribute -->
+    </div>
+  </section>
+
+  <!-- Contact section -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Interested in adopting one of Amelia’s pups? We’d love to hear from you!</p>
+    <p>Email: <a href="mailto:Ameliaandhercrew@yahoo.com">Ameliaandhercrew@yahoo.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/AmeliaAndHerCrew" target="_blank">@AmeliaAndHerCrew</a></p>
+    <p>Based in Dallas, Texas. We welcome inquiries from families across the country.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Amelia and Her Crew. All rights reserved.
+  </footer>
+
+</body>
+</html>
