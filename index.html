@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
+
+  
   <title>Amelia and Her Crew</title>
   <style>
     body {
@@ -168,6 +171,28 @@
       color: #fff;
       font-size: 0.9rem;
     }
+      /* Countdown styling */
+  .puppy-countdown {
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 700px;
+  }
+  .puppy-countdown h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  #flipdown {
+    margin: 0 auto;
+  }
+  .sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
   </style>
 </head>
 <body>
@@ -196,6 +221,13 @@
       </form>
     </div>
   </section>
+      <!-- Puppy Arrival Countdown -->
+    <section id="puppy-countdown" class="puppy-countdown">
+      <h2>Puppy Arrival Terminal – Next Arrival In…</h2>
+      <div id="flipdown" class="flipdown"></div>
+      <p id="count-message" class="sr-only">Countdown active</p>
+    </section>
+
 
   <!-- Features / About section -->
   <section class="section" id="parents">
@@ -253,6 +285,24 @@
   <footer>
     &copy; 2025 Amelia and Her Crew. All rights reserved.
   </footer>
+      <!-- FlipDown JS and countdown init -->
+    <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
+    <script>
+      // Set the puppy due date (Eastern Time)
+      const dueDate = '2025-09-25T00:00:00';
+      const dueEpoch = Math.floor(new Date(dueDate).getTime() / 1000);
+      new FlipDown(dueEpoch, 'flipdown', {
+        theme: 'light',
+        headings: ['Days', 'Hours', 'Mins', 'Secs']
+      })
+        .start()
+        .ifEnded(() => {
+          // Update the heading and message when countdown finishes
+          document.querySelector('#puppy-countdown h2').textContent = 'The puppies have landed! \uD83D\uDC3E';
+          document.getElementById('count-message').textContent = 'Countdown complete';
+        });
+    </script>
+
 
 </body>
 </html>
